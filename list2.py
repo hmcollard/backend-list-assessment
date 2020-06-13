@@ -5,7 +5,7 @@ Kenzie assignment: List2
 """
 # Your name, plus anyone who helped you with this assignment.
 # Give credit where credit is due.
-__author__ = "Haley Collard"
+__author__ = "Haley Collard fixed 2nd test error with help from demo"
 
 # Copyright 2010 Google Inc.
 # Licensed under the Apache License, Version 2.0
@@ -36,6 +36,14 @@ def remove_adjacent(nums):
             current_num = num
     return new_list
 
+# class code
+# def remove_adjacent(nums):
+#     result = []
+#     for num in nums:
+#         if not len(result) or num != result[-1]:
+#             result.append(num)
+#     return result
+
 
 # E. linear_merge
 # Given two lists sorted in increasing order, create and
@@ -50,21 +58,31 @@ def remove_adjacent(nums):
 
 def linear_merge(list1, list2):
     final_list = []
-    extras = []
-    i = 0
-    for item in list1:
-        if item < list2[i]:
-            final_list.append(item)
-        elif item == list2[i]:
-            final_list.append(item)
+    while list1 and list2:
+        i1 = 0
+        i2 = 0
+        if list1[i1] < list2[i2] or list1[i1] == list2[i2]:
+            final_list.append(list1[i1])
+            i1 += 1
         else:
-            final_list.append(list2[i])
-            extras.append(item)
-            i += 1
-    final_list.extend(extras)
-    final_list.extend(list2[i:])
+            final_list.append(list2[i2])
+            i2 += 1
+    final_list.extend(list2[i2:])
+    final_list.extend(list1[i1:])
 
     return final_list
+
+# class code
+# def linear_merge(list1, list2):
+#     result = []
+#     while list1 and list2:
+#         if list1[0] < list2[0]:
+#             result.append(list1.pop(0))
+#         else:
+#             result.append(list2.pop(0))
+#     result.extend(list1)
+#     result.extend(list2)
+#     return result
 
 
 # Provided simple test() function used in main() to print

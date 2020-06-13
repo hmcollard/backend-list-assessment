@@ -33,6 +33,14 @@ def match_ends(words):
                 count += 1
     return count
 
+# class code
+# def match_ends(words):
+#     count = 0
+#     for word in words:
+#         if len(word) > 1: and word[0] == word[-1]:
+#             count += 1
+#     return count
+
 
 # B. front_x
 # Given a list of strings, return a list with the strings in
@@ -58,6 +66,17 @@ def front_x(words):
     x_list.extend(abc_list)
     return x_list
 
+# class code
+# def front_x(words):
+#     x_list = []
+#     other_list = []
+#     for word in words:
+#         if word.startswith('x'):
+#             x_list.append(word)
+#         else:
+#             abc_list.append(word)
+#     return sorted(x_list) + sorted(other_list)
+
 
 # C. sort_last
 # Given a list of non-empty tuples, return a list sorted in
@@ -74,6 +93,17 @@ def last_num(t):
 def sort_last(tuples):
     tuples.sort(key=last_num)
     return tuples
+
+# class code
+# def last(t):
+#     return t[-1]
+
+# def sort_last(tuples):
+#     return sorted(tuples, key=last)
+
+# or
+# def sort_last(tuples):
+#     return sorted(tuples, key=lambda t: t[-1])
 
 
 # Provided simple test() function used in main() to print
