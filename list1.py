@@ -5,7 +5,7 @@ Kenzie assignment: List1
 """
 # Your name, plus anyone who helped you with this assignment.
 # Give credit where credit is due.
-__author__ = "???"
+__author__ = "Haley Collard"
 
 # Copyright 2010 Google Inc.
 # Licensed under the Apache License, Version 2.0
@@ -26,8 +26,20 @@ __author__ = "???"
 
 
 def match_ends(words):
-    # your code here
-    return
+    count = 0
+    for word in words:
+        if len(word) > 1:
+            if word[0] == word[-1]:
+                count += 1
+    return count
+
+# class code
+# def match_ends(words):
+#     count = 0
+#     for word in words:
+#         if len(word) > 1: and word[0] == word[-1]:
+#             count += 1
+#     return count
 
 
 # B. front_x
@@ -42,8 +54,28 @@ def match_ends(words):
 
 
 def front_x(words):
-    # your code here
-    return
+    x_list = []
+    abc_list = []
+    for word in words:
+        if word.startswith('x'):
+            x_list.append(word)
+        else:
+            abc_list.append(word)
+    x_list.sort()
+    abc_list.sort()
+    x_list.extend(abc_list)
+    return x_list
+
+# class code
+# def front_x(words):
+#     x_list = []
+#     other_list = []
+#     for word in words:
+#         if word.startswith('x'):
+#             x_list.append(word)
+#         else:
+#             abc_list.append(word)
+#     return sorted(x_list) + sorted(other_list)
 
 
 # C. sort_last
@@ -54,10 +86,24 @@ def front_x(words):
 #   [(2, 2), (1, 3), (3, 4, 5), (1, 7)]
 # Hint: use a custom key= function to extract the last element form each tuple.
 
+def last_num(t):
+    return t[-1]
+
 
 def sort_last(tuples):
-    # your code here
-    return
+    tuples.sort(key=last_num)
+    return tuples
+
+# class code
+# def last(t):
+#     return t[-1]
+
+# def sort_last(tuples):
+#     return sorted(tuples, key=last)
+
+# or
+# def sort_last(tuples):
+#     return sorted(tuples, key=lambda t: t[-1])
 
 
 # Provided simple test() function used in main() to print
