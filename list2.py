@@ -56,33 +56,32 @@ def remove_adjacent(nums):
 # ascending sorted order.
 
 
-def linear_merge(list1, list2):
-    final_list = []
-    while list1 and list2:
-        i1 = 0
-        i2 = 0
-        if list1[i1] < list2[i2] or list1[i1] == list2[i2]:
-            final_list.append(list1[i1])
-            i1 += 1
-        else:
-            final_list.append(list2[i2])
-            i2 += 1
-    final_list.extend(list2[i2:])
-    final_list.extend(list1[i1:])
-
-    return final_list
+# def linear_merge(list1, list2):
+#     final_list = []
+#     i1 = 0
+#     i2 = 0
+#     while list1[i1] and list2[i2]:
+#         if list1[i1] < list2[i2] or list1[i1] == list2[i2]:
+#             final_list.append(list1[i1])
+#             i1 += 1
+#         else:
+#             final_list.append(list2[i2])
+#             i2 += 1
+#     final_list.extend(list1[i1:])
+#     final_list.extend(list2[i2:])
+#     return final_list
 
 # class code
-# def linear_merge(list1, list2):
-#     result = []
-#     while list1 and list2:
-#         if list1[0] < list2[0]:
-#             result.append(list1.pop(0))
-#         else:
-#             result.append(list2.pop(0))
-#     result.extend(list1)
-#     result.extend(list2)
-#     return result
+def linear_merge(list1, list2):
+    result = []
+    while list1 and list2:
+        if list1[0] < list2[0]:
+            result.append(list1.pop(0))
+        else:
+            result.append(list2.pop(0))
+    result.extend(list1)
+    result.extend(list2)
+    return result
 
 
 # Provided simple test() function used in main() to print
